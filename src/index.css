@@ -1,0 +1,147 @@
+/**
+ * eSports Arena Manager (EP2) - Variables de la paleta "Táctico rojo",
+ * la misma de EP1, ahora sobrescribiendo las variables de Bootstrap 5
+ * en vez de aplicarse sobre un CSS hecho a mano.
+ * Contraste: texto grafito sobre el botón primario (el blanco solo llega a 3.4:1).
+ */
+:root {
+  --eam-fondo: #0f1923;
+  --eam-superficie: #1b2733;
+  --eam-superficie-2: #22303e;
+  --eam-primario: #ff4655;
+  --eam-primario-hover: #e8394a;
+  --eam-texto: #ece8e1;
+  --eam-tenue: #9aa7b0;
+  --eam-error: #ff8a00;
+  --eam-borde: #2c3a48;
+
+  /* Bootstrap lee estas variables para recalcular sus propios componentes */
+  --bs-body-bg: var(--eam-fondo);
+  --bs-body-color: var(--eam-texto);
+  --bs-primary: var(--eam-primario);
+  --bs-primary-rgb: 255, 70, 85;
+  --bs-border-color: var(--eam-borde);
+  --bs-link-color: var(--eam-primario);
+  --bs-link-hover-color: var(--eam-primario-hover);
+}
+
+body {
+  background-color: var(--eam-fondo);
+  color: var(--eam-texto);
+}
+
+a {
+  text-decoration: none;
+}
+
+.cabecera {
+  background-color: var(--eam-superficie) !important;
+  border-bottom: 1px solid var(--eam-borde);
+}
+
+.cabecera__marca {
+  color: var(--eam-texto) !important;
+  font-weight: 700;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--eam-tenue);
+}
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--eam-texto);
+  font-weight: 600;
+}
+
+.btn-primario,
+.btn-primary {
+  background-color: var(--eam-primario) !important;
+  border-color: var(--eam-primario) !important;
+  color: #1b2733 !important; /* grafito sobre el primario: el blanco baja a 3.4:1 */
+  font-weight: 600;
+}
+.btn-primario:hover,
+.btn-primary:hover {
+  background-color: var(--eam-primario-hover) !important;
+  border-color: var(--eam-primario-hover) !important;
+}
+
+.card,
+.tarjeta-torneo {
+  background-color: var(--eam-superficie);
+  border: 1px solid var(--eam-borde);
+  color: var(--eam-texto);
+}
+
+.table {
+  --bs-table-bg: var(--eam-superficie);
+  --bs-table-color: var(--eam-texto);
+  --bs-table-border-color: var(--eam-borde);
+}
+
+.form-control,
+.form-select {
+  background-color: var(--eam-superficie-2);
+  border-color: var(--eam-borde);
+  color: var(--eam-texto);
+}
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: var(--eam-superficie);
+  color: var(--eam-tenue);
+  opacity: 1;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--eam-superficie-2);
+  color: var(--eam-texto);
+  border-color: var(--eam-primario);
+  box-shadow: 0 0 0 0.2rem rgba(255, 70, 85, 0.25);
+}
+
+.texto-tenue {
+  color: var(--eam-tenue);
+}
+
+.llave-torneo__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--eam-borde);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--eam-superficie-2);
+}
+.llave-torneo__participantes {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+.llave-torneo__vs {
+  color: var(--eam-tenue);
+  font-size: 0.8rem;
+}
+.llave-torneo__meta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  color: var(--eam-tenue);
+  font-size: 0.85rem;
+}
+
+.pie-pagina {
+  background-color: var(--eam-superficie);
+  border-top: 1px solid var(--eam-borde);
+  color: var(--eam-tenue);
+  font-size: 0.9rem;
+}
+.pie-pagina a {
+  color: var(--eam-tenue);
+}
+
+.estado-vacio {
+  border: 1px dashed var(--eam-borde);
+  border-radius: 0.5rem;
+}
